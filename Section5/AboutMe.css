@@ -1,0 +1,30 @@
+/*rule:
+selector{
+	property: value;
+	property: value;
+}*/
+
+h1{
+	color: #ff0000;
+/*	border-color: purple;
+	border-width: 5px;
+	border-style: solid;*/
+
+	/*same as above but quicker way to write*/
+	border: 5px purple solid;
+}
+
+h4{
+	color:rgba(0, 0, 245, 0.4);
+	background: rgba(0,0,0,0.2);
+}
+
+li{
+	color: orange;
+}
+
+body{
+/*	background-image: url(https://www.staralliance.com/documents/20184/663416/STAR-BACKGROUND-BLUE-COLOR.jpg);
+	background-size: cover;*/
+
+}
