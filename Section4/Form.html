@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+</head>
+<body>
+
+	<h1>Form</h1>
+
+	<!-- action: where the form send data to -->
+	<!-- method: method of this form(get/post) -->
+<!-- 	<form action="https://www.wikipedia.org/" method="get">
+		<label>
+			Username:
+			<input name="username" type="text" placeholder="E-mail">
+		</label>
+		
+		<label>
+			Password:
+			<input name="password" type="password" placeholder="Password">
+		</label>
+		
+		<input type="Submit">
+	</form> -->
+
+
+	<!-- use for and id to connect data between label and input -->
+	<form action="https://www.wikipedia.org/" method="get">
+		<label for="email">E-mail:</label>
+		<input id="email" name="username" type="email" placeholder="E-mail" required>
+		
+		<label for="password">Password:</label>
+		<input id="password" name="password" type="password" placeholder="Password" required>
+		
+		<input type="Submit">
+	</form>
+
+</body>
+</html>
