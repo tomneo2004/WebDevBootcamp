@@ -1,0 +1,30 @@
+/*
+asterisk will select everything 
+*/
+*{
+	border: 2px solid lightgrey;
+}
+
+/*Decendant selector*/
+li a{
+	color: red;
+}
+
+/*adjacent selector*/
+h4 + ul{
+	border: 3px solid red;
+}
+
+/*attributes selector*/
+a[href="https://www.google.com/"]{
+	background: blue;
+}
+
+/*nth of type*/
+li:nth-of-type(odd){
+	background: purple;
+}
+
+ul:nth-of-type(2){
+	background: yellow;
+}

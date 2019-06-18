@@ -1,0 +1,19 @@
+body{
+	color:red;
+}
+
+h1{
+	color:blue;
+}
+
+li{
+	color:green;
+}
+
+.highlight{
+	color: purple;
+}
+
+#john{
+	color: orange;
+}
