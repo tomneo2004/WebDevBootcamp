@@ -1,0 +1,22 @@
+
+h1{
+	text-align: center;
+}
+
+table{
+	width: 50%;
+	margin: 0 auto;
+}
+td{
+	padding: 80px;
+}
+
+.mid-vertical{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.mid-row td{
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
