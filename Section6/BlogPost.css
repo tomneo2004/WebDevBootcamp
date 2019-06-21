@@ -14,7 +14,7 @@ body{
 
 /*rem is root em unlike em which is base on parent's font size, rem is base
 on Root's font size where Root is html so html{font-size: 16px} then any
-elements in html have 1rem would be 16px 2rem would be 16px times 2*/
+elements in html have 2rem would be 16px 2rem would be 16px times 2*/
 
 /*rem and em is used for responsive design*/
 .date{
