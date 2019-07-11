@@ -1,0 +1,11 @@
+<h1>Result page</h1>
+
+<ul>
+	<% if(data){ %>
+		<% data.forEach((movie)=>{ %>
+			<li>
+				<%= movie.Title %>
+			</li>
+		<% }); %>
+	<% } %>
+</ul>
