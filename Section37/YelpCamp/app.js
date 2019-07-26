@@ -8,7 +8,8 @@ const express = require("express"),
 	  passport = require("passport"),
 	  localStrategy = require("passport-local"),
 	  User = require("./models/user"),
-	  expressSession = require("express-session");
+	  expressSession = require("express-session"),
+	  methodOverride = require("method-override");
 
 var   campgrounds = require("./routers/campgrounds"),
 	  comments = require("./routers/comments"),
@@ -17,6 +18,7 @@ var   campgrounds = require("./routers/campgrounds"),
 app.use(express.static(__dirname + "/public"))
 app.use(bodyParser.urlencoded({extended:true}));
 app.set("view engine", "ejs");
+app.use(methodOverride("_method"));
 
 app.use(expressSession({
 	secret:"Secret session no one can ever know",
@@ -65,6 +67,6 @@ app.use("/campgrounds/:id/comments", comments);
 app.use(index);
 
 
-app.listen(3000, ()=>{
+app.listen(80, ()=>{
 	console.log("Yelp Campe server started!!!");
 });
