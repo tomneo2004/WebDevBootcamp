@@ -9,7 +9,8 @@ const express = require("express"),
 	  localStrategy = require("passport-local"),
 	  User = require("./models/user"),
 	  expressSession = require("express-session"),
-	  methodOverride = require("method-override");
+	  methodOverride = require("method-override"),
+	  flash = require("connect-flash");
 
 var   campgrounds = require("./routers/campgrounds"),
 	  comments = require("./routers/comments"),
@@ -26,6 +27,8 @@ app.use(expressSession({
 	saveUninitialized: false
 }));
 
+app.use(flash());
+
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -37,8 +40,10 @@ passport.deserializeUser(User.deserializeUser());
 //middleware
 app.use(function(req, res, next){
 	
-
+	console.log("middleware");
 	res.locals.currentUser = req.user;
+	res.locals.success = req.flash("success");
+	res.locals.error = req.flash("error");
 	console.log(res.locals);
 	next();
 });
