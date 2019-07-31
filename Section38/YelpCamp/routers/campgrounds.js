@@ -14,7 +14,7 @@ router.get("/", (req, res)=>{
 	.then((allcampgrounds)=>{
 
 		console.log(query);
-		res.render("campgrounds/campgrounds_index", {camps:allcampgrounds});
+		res.render("campgrounds/campgrounds_index", {camps:allcampgrounds, page:"campgrounds"});
 	})
 	.catch((error)=>{
 
@@ -34,6 +34,7 @@ router.post("/", middleware.isLogin, (req, res)=>{
 
 	//get user input params
 	const name = req.body.name;
+	const price = req.body.price;
 	const img = req.body.image;
 	const desc = req.body.description;
 
@@ -45,6 +46,7 @@ router.post("/", middleware.isLogin, (req, res)=>{
 	//add new campground to database
 	Campground.create({
 		name : name,
+		price : price,
 		image : img,
 		description : desc,
 		author : author

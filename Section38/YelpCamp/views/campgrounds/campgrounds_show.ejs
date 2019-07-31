@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 
-<div class="container">
+<!-- <div class="container"> -->
 	<div class="row">
 		<div class="col-md-3">
 			<div class="lead">
@@ -17,7 +17,7 @@
 			<div class="card">
 				<img class="card-img-top" src="<%= campInfo.image %>">
 				<div class="card-body p-2">
-					<h4 class="caption float-right">$9.00/night</h4>
+					<h4 class="caption float-right">$<%= campInfo.price %>/night</h4>
 					<h4 class="card-title"><%= campInfo.name%></h4>
 					<p class="card-text"><%= campInfo.description%></p>
 					<h4 class="card-title"><%= campInfo.author.username%></h4>
@@ -59,7 +59,7 @@
 
 		</div>
 	</div>
-</div>
+<!-- </div> -->
 
 
 

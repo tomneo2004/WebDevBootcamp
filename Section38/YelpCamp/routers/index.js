@@ -12,7 +12,7 @@ router.get("/", (req, res)=>{
 
 router.get("/register", (req, res)=>{
 	console.log("get register");
-	res.render("register");
+	res.render("register", {page:"register"});
 });
 
 router.post("/register", (req, res)=>{
@@ -21,9 +21,9 @@ router.post("/register", (req, res)=>{
 
 		console.log("post register");
 		if(err){
-			req.flash("error", err.message);
+			// req.flash("error", err.message);
 			console.log(err);
-			return res.redirect("register");
+			return res.render("register", {error:err.message, page:"register"});
 		}
 
 		passport.authenticate("local")(req, res, ()=>{
@@ -35,7 +35,7 @@ router.post("/register", (req, res)=>{
 
 router.get("/login", (req, res)=>{
 
-	res.render("login");
+	res.render("login", {page:"login"});
 });
 
 router.post("/login", passport.authenticate("local", {

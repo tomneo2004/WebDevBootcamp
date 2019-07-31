@@ -1,3 +1,21 @@
 .img-thumbnail{
 	padding: 0;
 }
+
+#login-form{
+	width: 30%; 
+	margin: 25px auto;
+}
+
+#login-form-header{
+	text-align: center
+}
+
+#register-form{
+	width: 30%; 
+	margin: 25px auto;
+}
+
+#register-form-header{
+	text-align: center
+}
