@@ -49,7 +49,7 @@ app.use(function(req, res, next){
 });
 
 //connect to mongodb
-mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 
 //seedDB();
 
@@ -72,6 +72,6 @@ app.use("/campgrounds/:id/comments", comments);
 app.use(index);
 
 
-app.listen(80, ()=>{
+app.listen(process.env.PORT || 3000, process.env.IP, ()=>{
 	console.log("Yelp Campe server started!!!");
 });
