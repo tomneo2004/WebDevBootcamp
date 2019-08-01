@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var passport = require("passport");
-User = require("../models/user"),
+var User = require("../models/user");
 
 router.get("/", (req, res)=>{
 
@@ -17,7 +17,15 @@ router.get("/register", (req, res)=>{
 
 router.post("/register", (req, res)=>{
 
-	User.register({username:req.body.username}, req.body.password, (err, user)=>{
+	var user = {
+		username:req.body.username,
+	}
+
+	if(req.body.admincode === process.env.ADMIN_CODE){
+		user.isAdmin = true;
+	}
+
+	User.register(user, req.body.password, (err, user)=>{
 
 		console.log("post register");
 		if(err){

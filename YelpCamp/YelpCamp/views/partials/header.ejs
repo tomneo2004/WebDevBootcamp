@@ -29,6 +29,14 @@
               <li class="<%= typeof page !== 'undefined' && page === 'campgrounds' ? 'active' : '' %>"><a class="nav-link" href="/campgrounds">Home</a></li>
            </ul>
 
+           
+          <%if(currentUser && currentUser.isAdmin){%>
+            <ul class="navbar-nav mr-auto ml-auto">
+              <li class="nav-item">Welcome admin</li>
+            </ul>
+          <%}%>
+           
+
           <ul class="navbar-nav">
             <% if(!currentUser){ %>
               <li class="nav-item <%= typeof page !== 'undefined' && page === 'login' ? 'active' : '' %>">

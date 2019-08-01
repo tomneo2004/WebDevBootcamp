@@ -12,6 +12,8 @@ const express = require("express"),
 	  methodOverride = require("method-override"),
 	  flash = require("connect-flash");
 
+require("dotenv").config();
+
 var   campgrounds = require("./routers/campgrounds"),
 	  comments = require("./routers/comments"),
 	  index = require("./routers/index");
