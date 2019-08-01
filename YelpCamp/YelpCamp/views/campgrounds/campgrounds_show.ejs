@@ -23,7 +23,7 @@
 					<p class="card-title">
 						<em>Submitted by <%= campInfo.author.username%>, <%= moment(campInfo.createdAy).fromNow()%></em>	
 					</p>
-					<% if(currentUser && currentUser._id.equals(campInfo.author.id) || currentUser.isAdmin){ %>
+					<% if(currentUser && (currentUser._id.equals(campInfo.author.id) || currentUser.isAdmin)) { %>
 
 						<a class="btn btn-warning" href="/campgrounds/<%= campInfo._id%>/edit">Edit</a>
 						<form class="d-inline" action="/campgrounds/<%= campInfo._id%>?_method=DELETE" method="post">
@@ -46,7 +46,7 @@
 								<strong><%= comment.author.username %></strong>
 								<p class="float-right"><%= moment(comment.createdAt).fromNow() %></p>
 								<p><%= comment.text%></p>
-								<% if(currentUser && currentUser._id.equals(comment.author.id) || currentUser.isAdmin){ %>
+								<% if(currentUser && (currentUser._id.equals(comment.author.id) || currentUser.isAdmin)) { %>
 									<a class="btn btn-warning" href="/campgrounds/<%=campInfo._id%>/comments/<%=comment._id%>/edit">Edit</a>
 									<form class="d-inline" action="/campgrounds/<%=campInfo._id%>/comments/<%=comment._id%>?_method=DELETE" method="post"> 
 										<button class="btn btn-danger">Delete</button>
