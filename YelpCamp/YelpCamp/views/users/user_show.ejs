@@ -1,0 +1,38 @@
+<% include ../partials/header %> 
+
+    <div class="text-center mb-5">
+        <h1><%=user.username%>'s profile</h1>
+    </div>
+    
+    <div class="row">
+
+        <div class="col-6">
+            <div class="card">
+                <img class="img-fluid rounded" src="<%=user.avatar%>">
+                <div class="dropdown-divider ml-3 mr-3"></div>
+                <h5 class="card-title text-muted">First name: <%=user.firstname%></h5>
+                <h5 class="card-title mb-2 text-muted">Last name: <%=user.lastname%></h5>
+                <h5 class="card-title mb-2 text-muted">
+                    E-mail: <a href="mailto:<%=user.email%>"><%=user.email%></a>
+                </h5>
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header text-center bg-primary text-white">Campgrounds by <%=user.username%></div>
+                <ul class="list-group list-group-flush">
+                    <%if(camps){%>
+                        <%camps.forEach(function(camp){%>
+                            <a class="list-group-item" href="/campgrounds/<%=camp._id%>"><%=camp.name%></a>
+                        <%});%> 
+                    <%}%>                
+                </ul>
+            </div>
+        </div> 
+
+    </div>
+
+
+
+ <% include ../partials/footer %> 

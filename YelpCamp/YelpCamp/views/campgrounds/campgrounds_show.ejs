@@ -21,7 +21,7 @@
 					<h4 class="card-title"><%= campInfo.name%></h4>
 					<p class="card-text"><%= campInfo.description%></p>
 					<p class="card-title">
-						<em>Submitted by <%= campInfo.author.username%>, <%= moment(campInfo.createdAy).fromNow()%></em>	
+						<em>Submitted by <a href="/user/<%= campInfo.author.id%>"><%= campInfo.author.username%></a>, <%= moment(campInfo.createdAy).fromNow()%></em>	
 					</p>
 					<% if(currentUser && (currentUser._id.equals(campInfo.author.id) || currentUser.isAdmin)) { %>
 
